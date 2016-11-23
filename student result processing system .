@@ -1,0 +1,83 @@
+class JavaClass
+{
+	String[] snames;
+	int smarks[];
+	
+	public void readStudentDetails()
+	{
+		System.out.print("Enter Number of Students in Javaclass: ");
+		int scount = Integer.parseInt(System.console().readLine());
+		
+		snames = new String[scount];
+		smarks = new int[scount];
+		
+		System.out.println("Reading Details of " + scount + "Students of Java Class");
+		System.out.println("=======================================================");
+		
+		for(int stud=0; stud<scount; stud++)
+		{
+			System.out.print("Enter Name of Student: " +(stud+1)+": ");
+			snames[stud] = System.console().readLine();
+			
+			System.out.print("Enter Marks of Student: " +(stud+1)+": ");
+			smarks[stud] = Integer.parseInt(System.console().readLine());
+		}
+		System.out.println("=======================================================");
+	}
+	public void printStudentResults()
+	{
+		System.out.println("Printing Results of " + smarks.length + "Students of Java Class");
+		System.out.println("=======================================================");
+		
+		for(int stud=0; stud<snames.length; stud++)
+		{
+			System.out.print("Result of" +snames[stud] + "is: ");
+			if(smarks[stud]>=40) System.out.println("Qualified");
+			else System.out.println("failed");
+		}
+		System.out.println("=======================================================");
+	}
+}
+class StudentResults
+{
+	public static void main(String[] args)
+	
+	{
+		JavaClass jc = new JavaClass();
+		jc.readStudentDetails();
+		jc.readStudentResults();
+	}
+}
+
+
+
+
+
+
+
+Output: 
+
+       Enter number of Students in Java Class: 3
+       Reading Details of 3 Students of Java Class
+       ===============================================
+       Enter name of the Student-1: Ram
+       Enter Marks of the Student-1: 59
+       Enter name of the Student-2: Kumar
+       Enter Marks of the Student-2: 36
+       Enter name of the Student-3: Ramkumar
+       Enter Marks of the Student-3: 94
+       ===============================================
+       Printing Results of 3 Students of Java Class
+       ===============================================
+       Result of Ram is:Qualified
+       Result of Kumar is:Failed
+       Result of Ramkumar is:Qualified
+       ===============================================
+       
+       
+       
+       
+       
+       
+       
+       
